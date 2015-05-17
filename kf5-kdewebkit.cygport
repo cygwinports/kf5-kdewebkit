@@ -1,0 +1,24 @@
+inherit kf5
+
+NAME="kf5-kdewebkit"
+VERSION=5.10.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 WebKit integration library"
+DESCRIPTION="This library provides KDE integration of the QtWebKit library.
+If you are using QtWebKit in your KDE application, you are encouraged to use
+this layer instead of using the QtWebKit classes directly."
+
+PKG_NAMES="libKF5WebKit5 libKF5WebKit-devel"
+libKF5WebKit5_CONTENTS="
+	usr/bin/cygKF5WebKit-5.dll
+	usr/share/doc/
+"
+libKF5WebKit_devel_REQUIRES="libKF5CoreAddons-devel libKF5KIO-devel libKF5Parts-devel libKF5Wallet-devel libQt5WebKit-devel"
+libKF5WebKit_devel_CONTENTS="
+	usr/include/KF5/KDEWebKit/
+	usr/include/KF5/kdewebkit_version.h
+	usr/lib/cmake/KF5WebKit/
+	${QT5_MKSPECSDIR#/}/modules/qt_KDEWebKit.pri
+	usr/lib/libKF5WebKit.dll.a
+"
